@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController{
 
-  int i=0;
+  int i=1;
 
   void chang(){
 
