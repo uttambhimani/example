@@ -10,51 +10,44 @@ class Home_Screen extends StatefulWidget {
 }
 
 class _Home_ScreenState extends State<Home_Screen> {
-
-  var homecontroller = Get.put(HomeController());
+  var homecantroller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: GetBuilder(
-              init: HomeController(),
-              builder: (controller){
-                return Text("${homecontroller.i}");
-              },
-            ),
-          ),
-          SizedBox(height: 20,),
-          Row(
+        body: Center(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: (){
-                homecontroller.chang();
-              }, child: Text("1")),
-              SizedBox(width: 20,),
+              GetBuilder(
+                init:HomeController(),
+                builder: (controller){
+                  return Text("${homecantroller.i}");
+                },
+              ),
+            SizedBox(height: 50,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(onPressed: (){
+                  homecantroller.chang();
+                }, child: Text("1")),
+                TextButton(onPressed: (){
+                  homecantroller.changg();
+                }, child: Text("2")),
+                TextButton(onPressed: (){
+                  homecantroller.changgg();
+                }, child: Text("4")),
+                TextButton(onPressed: (){
+                  homecantroller.changggg();
+                }, child: Text("8")),
 
-              ElevatedButton(onPressed: (){
-                homecontroller.changg();
-              }, child: Text("2")),
-              SizedBox(width: 20,),
-
-              ElevatedButton(onPressed: (){
-                homecontroller.changgg();
-              }, child: Text("4")),
-              SizedBox(width: 20,),
-
-              ElevatedButton(onPressed: (){
-                homecontroller.changggg();
-              }, child: Text("8")),
-
+              ],
+            )
             ],
-          )
-        ],
-      ) ,
+          ),
         ),
-      );
+      ),
+    );
   }
 }
